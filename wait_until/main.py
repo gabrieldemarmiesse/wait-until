@@ -1,7 +1,12 @@
 import time
+from typing import Callable, Union
 
 
-def wait_until(predicate, timeout=15, interval=0.2):
+def wait_until(
+    predicate: Callable,
+    timeout: Union[int, float] = 15,
+    interval: Union[int, float] = 0.2,
+):
     starting_time = time.time()
     number_or_calls = 0
     while 1:
